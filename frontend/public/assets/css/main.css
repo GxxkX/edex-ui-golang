@@ -1,0 +1,70 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0vh;
+    padding: 0vh;
+    overflow: hidden;
+}
+body {
+    user-select: none !important;
+    padding-top: 1.85vh;
+    color: rgb(var(--color_r), var(--color_g), var(--color_b));
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: linear-gradient(90deg, var(--color_light_black) 1.85vh, transparent 1%) center, linear-gradient(var(--color_light_black) 1.85vh, transparent 1%) center, var(--color_grey);
+    background-size: 2.04vh 2.04vh;
+}
+body.solidBackground {
+    background: var(--color_light_black);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-button {
+    display: none;
+}
+::-webkit-scrollbar-track {
+    background: rgba(var(--color_r), var(--color_g), var(--color_b), 0.4);
+    border: 3px solid var(--color_light_black);
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(var(--color_r), var(--color_g), var(--color_b));
+    height: auto;
+}
+
+section > h3.title:first-child {
+    position: fixed;
+    margin: 0vh;
+    padding: 0vh 0.925vh;
+    font-size: 1.02vh;
+    border-bottom: 0.092vh solid rgba(var(--color_r), var(--color_g), var(--color_b), 0.3);
+}
+section > h3.title:first-child > p {
+    display: inline-block;
+    margin: 0vh;
+    width: 49.4%;
+}
+section > h3.title:first-child > p:last-child {
+    text-align: right;
+    white-space: nowrap;
+}
+section > h3.title:first-child::before {
+    content: "";
+    border-left: 0.092vh solid rgba(var(--color_r), var(--color_g), var(--color_b), 0.3);
+    position: relative;
+    left: -0.925vh;
+    bottom: -0.555vh;
+    height: 0.46vh;
+}
+section > h3.title:first-child::after {
+    content: "";
+    border-right: 0.092vh solid rgba(var(--color_r), var(--color_g), var(--color_b), 0.3);
+    position: relative;
+    right: -1.2vh;
+    bottom: -0.555vh;
+    height: 0.46vh;
+}

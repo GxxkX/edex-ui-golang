@@ -1,0 +1,217 @@
+section#main_shell {
+    width: 65%;
+    height: 60.3%;
+    padding: 0.74vh;
+    border: 0.18vh solid rgba(var(--color_r), var(--color_g), var(--color_b), 0.5);
+    border-radius: 0.278vh;
+
+    --aug-border: 0.18vh;
+    --aug-border-bg: rgb(var(--color_r), var(--color_g), var(--color_b));
+    --aug-border-opacity: 0.5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
+
+    transition: width .5s cubic-bezier(0.85, 0.5, 0.85, 0.5), height .5s cubic-bezier(0.85, 0.5, 0.85, 0.5);
+}
+
+h1#main_shell_greeting {
+    font-size: 3.9vh;
+    font-weight: normal;
+    margin: auto;
+    opacity: 0;
+    transition: opacity .5s cubic-bezier(0.4, 0, 1, 1);
+}
+
+h1#main_shell_greeting > em {
+    font-style: normal;
+    font-weight: bold;
+}
+
+section#main_shell > h3.title {
+    top: 0.74vh;
+    left: 16.5vw;
+    width: 66%;
+    transition: opacity .5s cubic-bezier(0.4, 0, 1, 1) .5s;
+}
+
+section#main_shell > h3.title > p {
+    width: 49.8%;
+}
+
+ul#main_shell_tabs {
+    margin: 0;
+    margin-top: -0.70vh;
+    margin-left: -0.74vh;
+    padding: 0;
+    width: calc(100% + 1.48vh);
+    display: flex;
+    box-sizing: border-box;
+    border-bottom: 0.18vh solid rgba(var(--color_r), var(--color_g), var(--color_b), 0.5);
+    border-top-left-radius: 0.278vh;
+    border-top-right-radius: 0.278vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+ul#main_shell_tabs > li {
+    cursor: pointer;
+    display: block;
+    font-family: var(--font_main);
+    font-weight: normal;
+    width: 100%;
+    padding-top: 0.7vh;
+    padding-bottom: 0.4vh;
+    text-align: center;
+    box-sizing: border-box;
+
+    background: var(--color_light_black);
+    transform: skewX(35deg);
+}
+ul#main_shell_tabs > li > p {
+    margin: 0;
+    transform: skewX(-35deg);
+}
+ul#main_shell_tabs > li:not(:first-child) {
+    border-left: 0.18vh solid rgba(var(--color_r), var(--color_g), var(--color_b), 0.5);
+}
+
+ul#main_shell_tabs > li.active {
+    background: rgb(var(--color_r), var(--color_g), var(--color_b));
+    color: var(--color_light_black);
+    font-weight: bold;
+    transform: skewX(35deg) scale(1.2);
+    z-index: -1;
+}
+
+div#main_shell_innercontainer, div#main_shell_innercontainer pre {
+    height: 100%;
+    width: 100%;
+    margin: 0vh;
+    overflow: hidden;
+}
+
+div#main_shell_innercontainer pre {
+    z-index: -999;
+    opacity: 0;
+    position: relative;
+}
+
+div#main_shell_innercontainer pre.active {
+    z-index: inherit;
+    opacity: 1;
+}
+
+div#main_shell_innercontainer pre#terminal1 {
+    top: -100%;
+}
+div#main_shell_innercontainer pre#terminal2 {
+    top: -200%;
+}
+div#main_shell_innercontainer pre#terminal3 {
+    top: -300%;
+}
+div#main_shell_innercontainer pre#terminal4 {
+    top: -400%;
+}
+
+.terminal .xterm-viewport {
+    overflow: hidden;
+    cursor: default;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding-bottom: 10px;
+}
+
+.xterm {
+    font-family: monospace;
+    font-feature-settings: "liga" 0;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.xterm.focus,
+.xterm:focus {
+    outline: none;
+}
+
+.xterm .xterm-helpers {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+}
+
+.xterm .xterm-helper-textarea {
+    position: absolute;
+    opacity: 0;
+    left: -9999em;
+    top: 0;
+    width: 0;
+    height: 0;
+    z-index: -10;
+    white-space: nowrap;
+    overflow: hidden;
+    resize: none;
+}
+
+.xterm .composition-view {
+    background: #000;
+    color: #FFF;
+    display: none;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.xterm .composition-view.active {
+    display: block;
+}
+
+.xterm .xterm-viewport {
+    background-color: #000;
+    overflow-y: hidden;
+}
+
+.xterm .xterm-screen {
+    position: relative;
+}
+
+.xterm canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.xterm .xterm-scroll-area {
+    visibility: hidden;
+}
+
+.xterm .xterm-char-measure-element {
+    display: inline-block;
+    visibility: hidden;
+    position: absolute;
+    left: -9999em;
+    line-height: normal;
+}
+
+.xterm.enable-mouse-events {
+    /* When mouse events are enabled (eg. tmux), revert to the standard pointer cursor */
+    cursor: default;
+}
+
+.xterm:not(.enable-mouse-events) {
+    cursor: text;
+}
+.terminal {
+    height: 100%;
+}

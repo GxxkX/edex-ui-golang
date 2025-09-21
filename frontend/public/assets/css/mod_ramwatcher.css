@@ -1,0 +1,127 @@
+div#mod_ramwatcher {
+    border-top: 0.092vh solid rgba(var(--color_r), var(--color_g), var(--color_b), 0.3);
+    font-family: var(--font_main_light);
+    letter-spacing: 0.092vh;
+    font-size: 1.111vh;
+    padding: 0vh;
+    padding-top: 0.645vh;
+    display: flex;
+}
+
+div#mod_ramwatcher::before {
+    content: "";
+    border-left: 0.092vh solid rgba(var(--color_r), var(--color_g), var(--color_b), 0.3);
+    align-self: flex-start;
+    position: relative;
+    left: -0.092vh;
+    top: -1.111vh;
+    height: 0.833vh;
+}
+
+div#mod_ramwatcher::after {
+    content: "";
+    border-right: 0.092vh solid rgba(var(--color_r), var(--color_g), var(--color_b), 0.3);
+    position: relative;
+    right: -0.092vh;
+    top: -1.111vh;
+    height: 0.833vh;
+}
+
+div#mod_ramwatcher_inner {
+    width: 100%;
+}
+
+div#mod_ramwatcher_inner > h1:first-child {
+    font-size: 1.48vh;
+    margin: 0vh;
+    width: 98%;
+    padding-left: 2%;
+    margin-bottom: -1.5vh;
+}
+
+div#mod_ramwatcher_inner > h1:first-child > i {
+    font-style: normal;
+    font-size: 1.20vh;
+    opacity: 0.5;
+    text-align: right;
+    display: inline-block;
+    position: relative;
+    bottom: 1.6vh;
+    width: 100%;
+}
+
+div#mod_ramwatcher_pointmap {
+    display: grid;
+    grid-template-columns: repeat(40, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    grid-auto-flow: column;
+    grid-gap: 0.23vh;
+    padding-top: 0.5vh;
+    padding-left: 0.5vh;
+    margin-bottom: 0.8vh;
+}
+
+div.mod_ramwatcher_point {
+    width: 0.2vh;
+    height: 0.25vh;
+    background: rgb(var(--color_r), var(--color_g), var(--color_b));
+}
+
+div.mod_ramwatcher_point.free {
+    opacity: 0.1;
+}
+
+div.mod_ramwatcher_point.available {
+    opacity: 0.3;
+}
+
+div.mod_ramwatcher_point.active {
+    opacity: 1;
+}
+
+div#mod_ramwatcher_swapcontainer {
+    display: grid;
+    grid-template-columns: 15% 65% 20%;
+    padding-left: 0.5vh;
+    margin-bottom: 0.5vh;
+}
+
+div#mod_ramwatcher_swapcontainer h1 {
+    font-size: 1.3vh;
+    line-height: 1.5vh;
+    margin: 0vh;
+    align-self: center;
+}
+
+progress#mod_ramwatcher_swapbar {
+    width: 100%;
+    align-self: center;
+    -webkit-appearance: none;
+    border-right: .1vh solid rgba(var(--color_r), var(--color_g), var(--color_b), 0.8);
+}
+
+progress#mod_ramwatcher_swapbar::-webkit-progress-bar {
+    background: rgba(var(--color_r), var(--color_g), var(--color_b), 0.4);
+    height: .25vh;
+    position: relative;
+    top: .55vh;
+}
+
+progress#mod_ramwatcher_swapbar::-webkit-progress-value {
+    background: rgb(var(--color_r), var(--color_g), var(--color_b));
+    height: .4vh;
+    transition: width .5s cubic-bezier(0.4, 0, 1, 1);
+    position: relative;
+    bottom: .4vh;
+}
+
+h3#mod_ramwatcher_swaptext {
+    font-style: normal;
+    font-size: 1.3vh;
+    line-height: 1.5vh;
+    opacity: 0.5;
+    margin: 0vh;
+    white-space: nowrap;
+    align-self: center;
+    text-align: right;
+}

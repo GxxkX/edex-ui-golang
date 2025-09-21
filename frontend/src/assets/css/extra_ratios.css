@@ -1,0 +1,205 @@
+/* Support for other screen ratios than 16:9 */
+@media (aspect-ratio: 16/10) {
+    section#filesystem > h3.title {
+        width: 43.5vw;
+    }
+
+    div.keyboard_key {
+        height: 2.5vw;
+        min-width: 2.5vw;
+    }
+    div.keyboard_row:last-child {
+        left: 0.8vh;
+    }
+    div.keyboard_row:last-child div {
+        white-space: nowrap;
+    }
+    div.keyboard_row:last-child div:first-child {
+        width: 6.5vh;
+        min-width: 6.5vh;
+    }
+    div.keyboard_row:last-child div#keyboard_spacebar {
+        width: 45vh;
+        min-width: 45vh;
+    }
+    div.keyboard_row#row_2 > div.keyboard_enter {
+        top: -0.9vh;
+        right: -0.9vh;
+    }
+
+    /* See #317 */
+    section.mod_column {
+        width: 17.5%;
+    }
+    div#mod_toplist i {
+        font-size: 1.10vh;
+    }
+    table#mod_toplist_table {
+        padding-left: 0.2vh;
+    }
+    div#mod_toplist::after {
+        right: -15.6vw;
+    }
+
+    div#mod_netstat_innercontainer {
+        font-size: 1vh;
+    }
+
+    div#mod_conninfo canvas {
+        height: 10vh;
+    }
+}
+
+@media (aspect-ratio: 64/27) { /* Commercial name of 64/27 ratio is 21:9 */
+    div.keyboard_row#row_1 > div.keyboard_enter {
+        height: 2.1vw;
+        margin-top: 0.2vh;
+    }
+    div.keyboard_row#row_2 > div.keyboard_enter {
+        height: 6vh;
+    }
+    div.keyboard_key#keyboard_spacebar {
+        width: 60vh;
+    }
+    div.keyboard_row#row_space {
+        left: 1.6vw;
+    }
+
+    div#mod_cpuinfo > div > div {
+        width: 94%;
+    }
+
+    table#mod_toplist_table {
+        margin-top: -1vh;
+    }
+
+    div#mod_netstat_inner {
+        width: 100%;
+    }
+
+    div#mod_globe canvas {
+        width: 85%;
+    }
+
+    div#mod_conninfo canvas {
+        height: 8vh;
+    }
+}
+
+@media (aspect-ratio: 5/4), (aspect-ratio: 4/3) {
+    section#filesystem {
+        display: none;
+    }
+
+    div.keyboard_row#row_1 > div.keyboard_enter {
+        height: 4.9vh;
+        left: 0.1vh
+    }
+    section#keyboard div.keyboard_key {
+        margin: 0vh 1vh;
+    }
+    section#keyboard div.keyboard_key#keyboard_spacebar {
+        min-width: 36vw;
+        width: 36vw;
+    }
+    div.keyboard_key > *:not(h1) {
+        font-size: 1.2vh;
+    }
+    div.keyboard_key > h2 {
+        top: 0.1vh;
+        left: 0.1vh;
+    }
+    div.keyboard_key > h3 {
+        bottom: 0.1vh;
+        right: 0.1vh;
+    }
+
+    div#mod_clock h1 > * {
+        margin: 0vh -0.1vh;
+    }
+
+    div#mod_sysinfo h1 {
+        font-size: 1vh;
+    }
+    div#mod_sysinfo h2 {
+        font-size: 1.1vh;
+    }
+
+    div#mod_cpuinfo_innercontainer > h1:first-child > i {
+        font-size: 0.8vh;
+    }
+    div#mod_cpuinfo h1 {
+        font-size: 1.1vh;
+    }
+    div#mod_cpuinfo i {
+        font-size: 1vh;
+    }
+
+    div#mod_ramwatcher_inner > h1:first-child > i {
+        font-size: 0.8vh;
+    }
+
+    div#mod_toplist i {
+        opacity: 0;
+    }
+    table#mod_toplist_table td {
+        font-size: 1.1vh;
+    }
+    table#mod_toplist_table td:nth-child(2) {
+        min-width: 4vw;
+        max-width: 4vw;
+    }
+
+    div#mod_netstat_inner > h1:first-child > i {
+        opacity: 0;
+    }
+    div#mod_netstat_innercontainer {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "state ping"
+                             "ip ip";
+    }
+    div#mod_netstat_innercontainer div:nth-child(1) {
+        grid-area: state;
+    }
+    div#mod_netstat_innercontainer div:nth-child(2) {
+        grid-area: ip;
+        border-top: 2px solid rgba(var(--color_r), var(--color_g), var(--color_b), 0.2);
+    }
+    div#mod_netstat_innercontainer div:nth-child(2) > * {
+        position: relative;
+        top: 1vh;
+    }
+    div#mod_netstat_innercontainer div:nth-child(3) {
+        grid-area: ping;
+    }
+    div#mod_netstat_innercontainer div {
+        align-items: center;
+    }
+
+    div#mod_globe_innercontainer > h1 > i {
+        opacity: 0
+    }
+    div#mod_globe_innercontainer > h2 {
+        font-size: 0.9vh;
+        color: rgba(0,0,0,0);
+    }
+    div#mod_globe_innercontainer > h2 > i {
+        font-size: 1.1vh;
+        color: rgb(var(--color_r), var(--color_g), var(--color_b));
+        text-align: left;
+    }
+
+    div#mod_conninfo_innercontainer > h1 > i {
+        opacity: 0;
+    }
+    div#mod_conninfo_innercontainer > h2 {
+        font-size: 0.9vh;
+        color: rgba(0,0,0,0);
+    }
+    div#mod_conninfo_innercontainer > h2 > i {
+        font-size: 1.1vh;
+        color: rgb(var(--color_r), var(--color_g), var(--color_b));
+        text-align: left;
+    }
+}
